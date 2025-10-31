@@ -42,7 +42,7 @@ Compline is a homage to Nord, Everforest, and the monotone colorscheme - reducin
 - [Heliboard (Android)](https://github.com/jblais493/compline/tree/main/heliboard)
 - [btop](https://github.com/jblais493/compline/tree/main/btop)
 - [SwayNC](https://github.com/jblais493/compline/tree/main/swaync) 
-- [Stylix in nixOS]()
+- [Stylix in nixOS](https://github.com/jblais493/compline/tree/main/nixos)
   - GTK/QT
   - Thunar
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/compline/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) 
