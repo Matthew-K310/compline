@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "Compline",
+  "theme": {
+    "colors": {
+      "frame": "#1a1d21", // done
+      "toolbar": "#3b4252",
+      "tab_text": "#eceff4",
+      "tab_loading": "#81a1c1",
+      "tab_line": "#81a1c1",
+      "tab_selected": "#434c5e",
+      "bookmark_text": "#d8dee9",
+      "icons": "#d8dee9",
+      "icons_attention": "#88c0d0",
+      "tab_background_text": "#e0dcd4", // done
+      "toolbar_field": "#515761",
+      "toolbar_field_text": "#e0dcd4", // done
+      "toolbar_field_focus": "#3d424a",
+      "toolbar_field_border_focus": "#b4bcc4", // done
+      "toolbar_field_highlight": "#515761",
+      "toolbar_field_highlight_text": "#e0dcd4", // done
+      "toolbar_top_separator": "#3b4252",
+      "toolbar_bottom_separator": "#3b4252",
+      "popup": "#434c5e",
+      "popup_text": "#e0dcd4",
+      "popup_highlight": "#cdacac",
+      "popup_highlight_text": "#2e3440",
+      "popup_border": "#4c566a",
+      "ntp_background": "#2e3440",
+      "ntp_text": "#d8dee9",
+      "sidebar": "#434c5e",
+      "sidebar_text": "#e0dcd4",
+      "sidebar_highlight": "#88c0d0",
+      "sidebar_highlight_text": "#e0dcd4",
+      "sidebar_border": "#4c566a"
+    }
+  }
+}

@@ -2,7 +2,7 @@ local M = {}
 
 M.palette = {
   background = '#1a1d21',
-  foreground = '#e0dcd4',
+  Foreground = '#e0dcd4',
   cursor = '#DBCDB3',
   cursor_text_color = 'background',
   selection_foreground = '#e0dcd4',
