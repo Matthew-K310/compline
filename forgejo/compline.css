@@ -1,0 +1,782 @@
+.markup [src$="#gh-light-mode-only"],
+.markup [src$="#light-mode-only"],
+.markup [href$="#gh-light-mode-only"],
+.markup [href$="#light-mode-only"] {
+  display: none;
+}
+
+.markup [src$="#gh-dark-mode-only"],
+.markup [src$="#dark-mode-only"],
+.markup [href$="#gh-dark-mode-only"],
+.markup [href$="#dark-mode-only"] {
+  display: unset;
+}
+
+:root {
+  /* Compline palette — https://github.com/joshuablais/compline */
+  --compline-bg: #1a1d21;
+  --compline-bg-alt: #22262b;
+  --compline-base0: #0f1114;
+  --compline-base1: #171a1e;
+  --compline-base2: #1f2228;
+  --compline-base3: #282c34;
+  --compline-base4: #3d424a;
+  --compline-base5: #515761;
+  --compline-base6: #676d77;
+  --compline-base7: #8b919a;
+  --compline-base8: #e0dcd4;
+  --compline-fg: #f0efeb;
+  --compline-fg-alt: #ccc4b4;
+  --compline-red: #cdacac;
+  --compline-orange: #ccc4b4;
+  --compline-green: #b8c4b8;
+  --compline-blue: #b4bcc4;
+  --compline-cyan: #b4c0c8;
+  --compline-yellow: #d4ccb4;
+  --compline-teal: #b4c4bc;
+  --compline-dark-cyan: #98a4ac;
+
+  /* steel ramp — body darker than bg for layering;
+     bg-alt at 700 (cards/boxes), base4 at 550 (borders/selection) */
+  --steel-900: #0f1114;
+  --steel-850: #131518;
+  --steel-800: #171a1e;
+  --steel-750: #1a1d21;
+  --steel-700: #22262b;
+  --steel-650: #282c34;
+  --steel-600: #30343c;
+  --steel-550: #3d424a;
+  --steel-500: #515761;
+  --steel-450: #5c626c;
+  --steel-400: #676d77;
+  --steel-350: #777d87;
+  --steel-300: #8b919a;
+  --steel-250: #a9adb2;
+  --steel-200: #ccc4b4;
+  --steel-150: #e0dcd4;
+  --steel-100: #f0efeb;
+  --is-dark-theme: true;
+
+  /* primary — Compline blue */
+  --color-primary: var(--compline-blue);
+  --color-primary-contrast: #1a1d21;
+  --color-primary-dark-1: #bfc6cd;
+  --color-primary-dark-2: #bfc6cd;
+  --color-primary-dark-3: #c9cfd5;
+  --color-primary-dark-4: #c9cfd5;
+  --color-primary-dark-5: #d4d8dd;
+  --color-primary-dark-6: #d4d8dd;
+  --color-primary-dark-7: #e0e3e6;
+  --color-primary-light-1: #a4adb7;
+  --color-primary-light-2: #949fa9;
+  --color-primary-light-3: #7e8a96;
+  --color-primary-light-4: #6b7783;
+  --color-primary-light-5: #5c6772;
+  --color-primary-light-6: #4d5761;
+  --color-primary-light-7: #40484f;
+  --color-primary-alpha-10: #b4bcc419;
+  --color-primary-alpha-20: #b4bcc433;
+  --color-primary-alpha-30: #b4bcc44b;
+  --color-primary-alpha-40: #b4bcc466;
+  --color-primary-alpha-50: #b4bcc480;
+  --color-primary-alpha-60: #b4bcc499;
+  --color-primary-alpha-70: #b4bcc4b3;
+  --color-primary-alpha-80: #b4bcc4cc;
+  --color-primary-alpha-90: #b4bcc4e1;
+  --color-primary-hover: var(--color-primary-light-1);
+  --color-primary-active: var(--color-primary-light-2);
+
+  /* secondary — surface chrome, based on steel ramp */
+  --color-secondary: var(--steel-700);
+  --color-secondary-dark-1: var(--steel-550);
+  --color-secondary-dark-2: var(--steel-500);
+  --color-secondary-dark-3: var(--steel-450);
+  --color-secondary-dark-4: var(--steel-400);
+  --color-secondary-dark-5: var(--steel-350);
+  --color-secondary-dark-6: var(--steel-300);
+  --color-secondary-dark-7: var(--steel-250);
+  --color-secondary-dark-8: var(--steel-200);
+  --color-secondary-dark-9: var(--steel-150);
+  --color-secondary-dark-10: var(--steel-100);
+  --color-secondary-dark-11: var(--steel-100);
+  --color-secondary-dark-12: var(--steel-100);
+  --color-secondary-dark-13: var(--steel-100);
+  --color-secondary-light-1: var(--steel-650);
+  --color-secondary-light-2: var(--steel-700);
+  --color-secondary-light-3: var(--steel-750);
+  --color-secondary-light-4: var(--steel-800);
+  --color-secondary-alpha-10: #282c3419;
+  --color-secondary-alpha-20: #282c3433;
+  --color-secondary-alpha-30: #282c344b;
+  --color-secondary-alpha-40: #282c3466;
+  --color-secondary-alpha-50: #282c3480;
+  --color-secondary-alpha-60: #282c3499;
+  --color-secondary-alpha-70: #282c34b3;
+  --color-secondary-alpha-80: #282c34cc;
+  --color-secondary-alpha-90: #282c34e1;
+  --color-secondary-hover: var(--color-secondary-light-1);
+  --color-secondary-active: var(--color-secondary-light-2);
+
+  /* console — actions log / terminal output */
+  --color-console-fg: var(--compline-fg);
+  --color-console-fg-subtle: var(--compline-base7);
+  --color-console-bg: #13161a;
+  --color-console-border: var(--compline-base4);
+  --color-console-hover-bg: #ffffff16;
+  --color-console-active-bg: var(--compline-base4);
+  --color-console-menu-bg: var(--compline-base4);
+  --color-console-menu-border: var(--compline-base6);
+
+  /* named colors — mapped to Compline palette */
+  --color-red: var(--compline-red);
+  --color-orange: var(--compline-orange);
+  --color-yellow: var(--compline-yellow);
+  --color-olive: #9ba68f;
+  --color-green: var(--compline-green);
+  --color-teal: var(--compline-teal);
+  --color-blue: var(--compline-blue);
+  --color-violet: var(--compline-dark-cyan);
+  --color-purple: var(--compline-dark-cyan);
+  --color-pink: #c0b4b8;
+  --color-brown: #a08c78;
+  --color-grey: var(--steel-500);
+  --color-black: #13161a;
+
+  /* light variants */
+  --color-red-light: #dcc5c5;
+  --color-orange-light: #dbd6ca;
+  --color-yellow-light: #e0d9ca;
+  --color-olive-light: #b9c0b1;
+  --color-green-light: #cdd6cd;
+  --color-teal-light: #cbd6cf;
+  --color-blue-light: #cbd2d8;
+  --color-violet-light: #b4bec5;
+  --color-purple-light: #b4bec5;
+  --color-pink-light: #d0c6c9;
+  --color-brown-light: #b7a695;
+  --color-grey-light: var(--steel-300);
+  --color-black-light: #22262b;
+
+  /* dark-1 variants (about 10% darker) */
+  --color-red-dark-1: #b89b9b;
+  --color-orange-dark-1: #b8b0a2;
+  --color-yellow-dark-1: #bfb8a2;
+  --color-olive-dark-1: #8c9581;
+  --color-green-dark-1: #a6b0a6;
+  --color-teal-dark-1: #a2b0a9;
+  --color-blue-dark-1: #a2a9b0;
+  --color-violet-dark-1: #89949b;
+  --color-purple-dark-1: #89949b;
+  --color-pink-dark-1: #ada2a6;
+  --color-brown-dark-1: #907e6c;
+  --color-black-dark-1: #0f1114;
+
+  /* dark-2 variants (about 20% darker) */
+  --color-red-dark-2: #a48a8a;
+  --color-orange-dark-2: #a39d90;
+  --color-yellow-dark-2: #aaa390;
+  --color-olive-dark-2: #7c8572;
+  --color-green-dark-2: #939d93;
+  --color-teal-dark-2: #909d96;
+  --color-blue-dark-2: #90969d;
+  --color-violet-dark-2: #7a838a;
+  --color-purple-dark-2: #7a838a;
+  --color-pink-dark-2: #9a9093;
+  --color-brown-dark-2: #806f60;
+  --color-black-dark-2: #0f1114;
+
+  /* ANSI colors — Compline terminal palette */
+  --color-ansi-black: #22262b;
+  --color-ansi-red: var(--compline-red);
+  --color-ansi-green: var(--compline-green);
+  --color-ansi-yellow: var(--compline-yellow);
+  --color-ansi-blue: var(--compline-blue);
+  --color-ansi-magenta: #c0b4b8;
+  --color-ansi-cyan: var(--compline-cyan);
+  --color-ansi-white: var(--compline-base7);
+  --color-ansi-bright-black: var(--compline-base6);
+  --color-ansi-bright-red: #dcc5c5;
+  --color-ansi-bright-green: #cdd6cd;
+  --color-ansi-bright-yellow: #e0d9ca;
+  --color-ansi-bright-blue: #cbd2d8;
+  --color-ansi-bright-magenta: #d0c6c9;
+  --color-ansi-bright-cyan: #c9d3d9;
+  --color-ansi-bright-white: var(--compline-fg);
+
+  /* other colors */
+  --color-gold: var(--compline-yellow);
+  --color-white: #ffffff;
+  --color-pure-black: #000000;
+
+  /* diff */
+  --color-diff-removed-word-bg: #4d3a3c;
+  --color-diff-added-word-bg: #364339;
+  --color-diff-removed-row-bg: #302526;
+  --color-diff-moved-row-bg: #322f27;
+  --color-diff-added-row-bg: #242b26;
+  --color-diff-removed-row-border: #4d3a3c;
+  --color-diff-moved-row-border: #4a4536;
+  --color-diff-added-row-border: #364339;
+  --color-diff-inactive: var(--steel-650);
+
+  /* alerts */
+  --color-error-border: #4d3a3c;
+  --color-error-bg: #302526;
+  --color-error-bg-active: #4d3a3c;
+  --color-error-bg-hover: #4d3a3c;
+  --color-error-text: var(--compline-red);
+  --color-success-border: #364339;
+  --color-success-bg: #242b26;
+  --color-success-text: var(--compline-green);
+  --color-warning-border: #4a4536;
+  --color-warning-bg: #322f27;
+  --color-warning-text: var(--compline-yellow);
+  --color-info-border: #3b4550;
+  --color-info-bg: #232a31;
+  --color-info-text: var(--compline-blue);
+
+  /* badges */
+  --color-red-badge: var(--compline-red);
+  --color-red-badge-bg: #cdacac22;
+  --color-red-badge-hover-bg: #cdacac44;
+  --color-green-badge: var(--compline-green);
+  --color-green-badge-bg: #b8c4b822;
+  --color-green-badge-hover-bg: #b8c4b844;
+  --color-yellow-badge: var(--compline-yellow);
+  --color-yellow-badge-bg: #d4ccb422;
+  --color-yellow-badge-hover-bg: #d4ccb444;
+  --color-orange-badge: var(--compline-orange);
+  --color-orange-badge-bg: #ccc4b422;
+  --color-orange-badge-hover-bg: #ccc4b444;
+
+  /* thin element colors (oklch — parametric, theme-independent)
+     chroma is low so the colors stay muted like the rest of Compline */
+  --thin-lightness: 0.78;
+  --regular-chroma: 0.06;
+  --color-thin-green: oklch(var(--thin-lightness) var(--regular-chroma) 145deg);
+  --color-thin-red: oklch(var(--thin-lightness) var(--regular-chroma) 27deg);
+  --color-thin-purple: oklch(
+    var(--thin-lightness) var(--regular-chroma) 250deg
+  );
+  --color-thin-orange: oklch(var(--thin-lightness) var(--regular-chroma) 85deg);
+
+  --thin-lightness-highlight: 0.85;
+  --color-thin-red-highlight: oklch(
+    var(--thin-lightness-highlight) var(--regular-chroma) 27deg
+  );
+
+  /* danger button bg (oklch) */
+  --bg-lightness: 0.3;
+  --bg-chroma: 0.03;
+  --color-danger-bg: oklch(var(--bg-lightness) var(--bg-chroma) 27deg);
+
+  /* target-based / semantic colors */
+  --color-body: var(--steel-800);
+  --color-box-header: var(--steel-700);
+  --color-box-body: var(--steel-750);
+  --color-box-body-highlight: var(--steel-650);
+  --color-text-dark: var(--compline-fg);
+  --color-text: var(--steel-100);
+  --color-text-light: var(--steel-150);
+  --color-text-light-1: var(--steel-150);
+  --color-text-light-2: var(--steel-200);
+  --color-text-light-3: var(--steel-200);
+  --color-footer: var(--steel-900);
+  --color-timeline: var(--steel-650);
+  --color-input-text: var(--steel-100);
+  --color-input-background: var(--steel-650);
+  --color-input-toggle-background: var(--steel-650);
+  --color-input-border: var(--steel-550);
+  --color-input-border-hover: var(--steel-450);
+  --color-header-wrapper: var(--steel-850);
+  --color-header-wrapper-transparent: #13151800;
+  --color-light: #00000028;
+  --color-light-mimic-enabled: rgba(
+    0,
+    0,
+    0,
+    calc(40 / 255 * 222 / 255 / var(--opacity-disabled))
+  );
+  --color-light-border: #ffffff28;
+  --color-hover: var(--steel-600);
+  --color-active: var(--steel-650);
+  --color-menu: var(--steel-700);
+  --color-card: var(--steel-700);
+  --fancy-card-bg: var(--steel-650);
+  --fancy-card-border: var(--steel-600);
+  --color-markup-table-row: #ffffff06;
+  --color-markup-code-block: var(--steel-800);
+  --color-markup-code-inline: var(--steel-850);
+  --color-button: var(--steel-600);
+  --color-code-bg: var(--steel-750);
+  --color-shadow: #00000060;
+  --color-secondary-bg: var(--steel-700);
+  --color-text-focus: var(--compline-fg);
+  --color-expand-button: #30343c;
+  --color-placeholder-text: var(--color-text-light-3);
+  --color-editor-line-highlight: var(--steel-700);
+  --color-project-board-bg: var(--color-secondary-light-3);
+  --color-project-board-dark-label: var(--color-text-light-3);
+  --color-caret: var(--color-text);
+  --color-reaction-bg: #ffffff12;
+  --color-reaction-active-bg: var(--color-primary-alpha-30);
+  --color-reaction-hover-bg: var(--color-primary-alpha-40);
+  --color-tooltip-text: var(--compline-fg);
+  --color-tooltip-bg: #0f1114f0;
+  --color-nav-bg: var(--steel-900);
+  --color-nav-hover-bg: var(--steel-600);
+  --color-secondary-nav-bg: var(--color-body);
+  --color-label-text: var(--compline-fg);
+  --color-label-bg: var(--steel-600);
+  --color-label-hover-bg: var(--steel-550);
+  --color-label-active-bg: var(--steel-500);
+  --color-label-bg-alt: var(--steel-550);
+  --color-accent: var(--color-primary-light-1);
+  --color-small-accent: var(--color-primary-light-5);
+  --color-highlight-fg: var(--color-primary-light-2);
+  --color-highlight-bg: var(--color-primary-alpha-20);
+  --color-overlay-backdrop: #0f1114c0;
+  --color-selection-bg: var(--steel-100);
+  --color-selection-fg: #1a1d21;
+
+  /* image diff checkerboard */
+  --checkerboard-color-1: #282c34;
+  --checkerboard-color-2: #1f2228;
+
+  /* status indicators */
+  --color-indicator-offline: #8b919a;
+  --color-indicator-offline-20: #8b919a1a;
+  --color-indicator-idle: var(--compline-green);
+  --color-indicator-idle-20: #b8c4b81a;
+  --color-indicator-active: var(--compline-blue);
+  --color-indicator-active-20: #b4bcc433;
+
+  accent-color: var(--color-accent);
+  color-scheme: dark;
+}
+
+/* invert emojis that are hard to read otherwise */
+.emoji[aria-label="check mark"],
+.emoji[aria-label="currency exchange"],
+.emoji[aria-label="TOP arrow"],
+.emoji[aria-label="END arrow"],
+.emoji[aria-label="ON! arrow"],
+.emoji[aria-label="SOON arrow"],
+.emoji[aria-label="heavy dollar sign"],
+.emoji[aria-label="copyright"],
+.emoji[aria-label="registered"],
+.emoji[aria-label="trade mark"],
+.emoji[aria-label="multiply"],
+.emoji[aria-label="plus"],
+.emoji[aria-label="minus"],
+.emoji[aria-label="divide"],
+.emoji[aria-label="curly loop"],
+.emoji[aria-label="double curly loop"],
+.emoji[aria-label="wavy dash"],
+.emoji[aria-label="paw prints"],
+.emoji[aria-label="musical note"],
+.emoji[aria-label="musical notes"] {
+  filter: invert(100%) hue-rotate(180deg);
+}
+i.grey.icon.icon.icon.icon {
+  color: var(--steel-350) !important;
+}
+.ui.secondary.vertical.menu {
+  border-radius: 0.28571429rem !important;
+  overflow: hidden;
+}
+.ui.basic.primary.button.item {
+  background-color: var(--color-active) !important;
+  color: var(--color-text) !important;
+  box-shadow: none !important;
+}
+.ui.red.label.notification_count,
+.ui.primary.label,
+.ui.primary.labels .label {
+  background-color: var(--color-primary-light-5) !important;
+  color: var(--compline-fg) !important;
+}
+.ui.labeled.icon.buttons > .button > .icon,
+.ui.labeled.icon.button > .icon {
+  background-color: var(--color-light) !important;
+}
+#review-box .review-comments-counter {
+  background-color: var(--color-shadow) !important;
+  color: var(--color-white) !important;
+  margin-left: 0.5em;
+}
+.ui.basic.labels .primary.label,
+.ui.ui.ui.basic.primary.label {
+  color: var(--color-text-dark) !important;
+}
+.ui.yellow.label.pending-label {
+  color: var(--color-warning-text) !important;
+}
+strong.attention-important,
+svg.attention-important {
+  color: var(--color-violet-light);
+}
+strong.attention-note,
+svg.attention-note {
+  color: var(--color-blue-light);
+}
+strong.attention-caution,
+svg.attention-caution {
+  color: var(--color-red-light);
+}
+/* pastel red needs dark text, not white */
+.ui.basic.red.button {
+  background-color: var(--color-red);
+  color: #1a1d21;
+}
+.ui.basic.red.button:hover,
+.ui.basic.red.button:focus {
+  background-color: var(--color-red-dark-1);
+  color: #1a1d21;
+}
+.ui.basic.red.button:active {
+  background-color: var(--color-red-dark-2);
+  color: #1a1d21;
+}
+
+/* Chroma syntax highlighting — Compline palette
+   https://github.com/alecthomas/chroma/blob/6428fb4e65f3c1493491571c8a6a8f1add1da822/types.go#L208
+   keywords red, types blue, builtins cyan, functions green,
+   strings yellow, numbers/constants orange, operators dark-cyan */
+.chroma .bp {
+  color: var(--compline-dark-cyan);
+  font-style: italic;
+} /* NameBuiltinPseudo — self/this/super */
+.chroma .c {
+  color: var(--compline-base7);
+  font-style: italic;
+} /* Comment */
+.chroma .c1 {
+  color: var(--compline-base7);
+  font-style: italic;
+} /* CommentSingle */
+.chroma .ch {
+  color: var(--compline-base7);
+  font-style: italic;
+} /* CommentHashbang */
+.chroma .cm {
+  color: var(--compline-base7);
+  font-style: italic;
+} /* CommentMultiline */
+.chroma .cp {
+  color: var(--compline-teal);
+} /* CommentPreproc — preprocessor directives */
+.chroma .cpf {
+  color: var(--compline-yellow);
+} /* CommentPreprocFile — string/path */
+.chroma .cs {
+  color: var(--compline-base7);
+  font-style: italic;
+} /* CommentSpecial */
+.chroma .dl {
+  color: var(--compline-yellow);
+} /* LiteralStringDelimiter */
+.chroma .fm {
+} /* NameFunctionMagic */
+.chroma .g {
+} /* Generic */
+.chroma .gd {
+  color: var(--compline-red);
+  background-color: #302526;
+} /* GenericDeleted */
+.chroma .ge {
+  color: var(--compline-fg);
+  font-style: italic;
+} /* GenericEmph */
+.chroma .gh {
+  color: var(--compline-blue);
+} /* GenericHeading */
+.chroma .gi {
+  color: var(--compline-green);
+  background-color: #242b26;
+} /* GenericInserted */
+.chroma .gl {
+} /* GenericUnderline */
+.chroma .go {
+  color: var(--compline-base7);
+} /* GenericOutput */
+.chroma .gp {
+  color: var(--compline-fg);
+} /* GenericPrompt */
+.chroma .gr {
+  color: var(--compline-red);
+} /* GenericError */
+.chroma .gs {
+  color: var(--compline-fg);
+  font-weight: bold;
+} /* GenericStrong */
+.chroma .gt {
+  color: var(--compline-red);
+} /* GenericTraceback */
+.chroma .gu {
+  color: var(--compline-base7);
+} /* GenericSubheading */
+.chroma .il {
+  color: var(--compline-orange);
+} /* LiteralNumberIntegerLong */
+.chroma .k {
+  color: var(--compline-red);
+} /* Keyword */
+.chroma .kc {
+  color: var(--compline-orange);
+} /* KeywordConstant — true/false/null */
+.chroma .kd {
+  color: var(--compline-red);
+} /* KeywordDeclaration — let/var/const */
+.chroma .kn {
+  color: var(--compline-red);
+} /* KeywordNamespace */
+.chroma .kp {
+  color: var(--compline-red);
+} /* KeywordPseudo */
+.chroma .kr {
+  color: var(--compline-red);
+} /* KeywordReserved */
+.chroma .kt {
+  color: var(--compline-blue);
+} /* KeywordType */
+.chroma .l {
+} /* Literal */
+.chroma .ld {
+} /* LiteralDate */
+.chroma .m {
+  color: var(--compline-orange);
+} /* LiteralNumber */
+.chroma .mb {
+  color: var(--compline-orange);
+} /* LiteralNumberBin */
+.chroma .mf {
+  color: var(--compline-orange);
+} /* LiteralNumberFloat */
+.chroma .mh {
+  color: var(--compline-orange);
+} /* LiteralNumberHex */
+.chroma .mi {
+  color: var(--compline-orange);
+} /* LiteralNumberInteger */
+.chroma .mo {
+  color: var(--compline-orange);
+} /* LiteralNumberOct */
+.chroma .n {
+  color: var(--compline-fg);
+} /* Name */
+.chroma .na {
+  color: var(--compline-teal);
+} /* NameAttribute */
+.chroma .nb {
+  color: var(--compline-cyan);
+} /* NameBuiltin */
+.chroma .nc {
+  color: var(--compline-blue);
+} /* NameClass */
+.chroma .nd {
+  color: var(--compline-teal);
+} /* NameDecorator */
+.chroma .ne {
+  color: var(--compline-blue);
+} /* NameException */
+.chroma .nf {
+  color: var(--compline-green);
+} /* NameFunction */
+.chroma .ni {
+  color: var(--compline-fg);
+} /* NameEntity */
+.chroma .nl {
+  color: var(--compline-red);
+} /* NameLabel */
+.chroma .nn {
+  color: var(--compline-fg);
+} /* NameNamespace */
+.chroma .no {
+  color: var(--compline-orange);
+} /* NameConstant */
+.chroma .nt {
+  color: var(--compline-red);
+} /* NameTag */
+.chroma .nv {
+  color: var(--compline-fg);
+} /* NameVariable */
+.chroma .nx {
+  color: var(--compline-fg);
+} /* NameOther */
+.chroma .o {
+  color: var(--compline-dark-cyan);
+} /* Operator */
+.chroma .ow {
+  color: var(--compline-dark-cyan);
+} /* OperatorWord */
+.chroma .p {
+  color: var(--compline-fg);
+} /* Punctuation */
+.chroma .py {
+} /* NameProperty */
+.chroma .s {
+  color: var(--compline-yellow);
+} /* LiteralString */
+.chroma .s1 {
+  color: var(--compline-yellow);
+} /* LiteralStringSingle */
+.chroma .s2 {
+  color: var(--compline-yellow);
+} /* LiteralStringDouble */
+.chroma .sa {
+  color: var(--compline-red);
+} /* LiteralStringAffix */
+.chroma .sb {
+  color: var(--compline-yellow);
+} /* LiteralStringBacktick */
+.chroma .sc {
+  color: var(--compline-yellow);
+} /* LiteralStringChar */
+.chroma .sd {
+  color: var(--compline-yellow);
+} /* LiteralStringDoc */
+.chroma .se {
+  color: var(--compline-orange);
+} /* LiteralStringEscape */
+.chroma .sh {
+  color: var(--compline-yellow);
+} /* LiteralStringHeredoc */
+.chroma .si {
+  color: var(--compline-yellow);
+} /* LiteralStringInterpol */
+.chroma .sr {
+  color: var(--compline-cyan);
+} /* LiteralStringRegex */
+.chroma .ss {
+  color: var(--compline-orange);
+} /* LiteralStringSymbol */
+.chroma .sx {
+  color: var(--compline-yellow);
+} /* LiteralStringOther */
+.chroma .vc {
+  color: var(--compline-fg);
+} /* NameVariableClass */
+.chroma .vg {
+  color: var(--compline-fg);
+} /* NameVariableGlobal */
+.chroma .vi {
+  color: var(--compline-fg);
+} /* NameVariableInstance */
+.chroma .vm {
+} /* NameVariableMagic */
+.chroma .w {
+  color: var(--compline-base6);
+} /* TextWhitespace */
+.chroma .err {
+  /* not styled — Chroma flags too many things like JSX */
+} /* Error */
+
+/* CodeMirror — markdown editor, Compline palette */
+.CodeMirror.cm-s-default .cm-property,
+.CodeMirror.cm-s-paper .cm-property {
+  color: var(--compline-teal);
+}
+
+.CodeMirror.cm-s-default .cm-header,
+.CodeMirror.cm-s-paper .cm-header {
+  color: var(--compline-blue);
+}
+
+.CodeMirror.cm-s-default .cm-quote,
+.CodeMirror.cm-s-paper .cm-quote {
+  color: var(--compline-yellow);
+}
+
+.CodeMirror.cm-s-default .cm-keyword,
+.CodeMirror.cm-s-paper .cm-keyword {
+  color: var(--compline-red);
+}
+
+.CodeMirror.cm-s-default .cm-atom,
+.CodeMirror.cm-s-paper .cm-atom {
+  color: var(--compline-orange);
+}
+
+.CodeMirror.cm-s-default .cm-number,
+.CodeMirror.cm-s-paper .cm-number {
+  color: var(--compline-orange);
+}
+
+.CodeMirror.cm-s-default .cm-def,
+.CodeMirror.cm-s-paper .cm-def {
+  color: var(--compline-fg);
+}
+
+.CodeMirror.cm-s-default .cm-variable-2,
+.CodeMirror.cm-s-paper .cm-variable-2 {
+  color: var(--compline-cyan);
+}
+
+.CodeMirror.cm-s-default .cm-variable-3,
+.CodeMirror.cm-s-paper .cm-variable-3 {
+  color: var(--compline-green);
+}
+
+.CodeMirror.cm-s-default .cm-comment,
+.CodeMirror.cm-s-paper .cm-comment {
+  color: var(--compline-base7);
+  font-style: italic;
+}
+
+.CodeMirror.cm-s-default .cm-string,
+.CodeMirror.cm-s-paper .cm-string {
+  color: var(--compline-yellow);
+}
+
+.CodeMirror.cm-s-default .cm-string-2,
+.CodeMirror.cm-s-paper .cm-string-2 {
+  color: var(--compline-orange);
+}
+
+.CodeMirror.cm-s-default .cm-meta,
+.CodeMirror.cm-s-paper .cm-meta,
+.CodeMirror.cm-s-default .cm-qualifier,
+.CodeMirror.cm-s-paper .cm-qualifier {
+  color: var(--compline-red);
+}
+
+.CodeMirror.cm-s-default .cm-builtin,
+.CodeMirror.cm-s-paper .cm-builtin {
+  color: var(--compline-cyan);
+}
+
+.CodeMirror.cm-s-default .cm-bracket,
+.CodeMirror.cm-s-paper .cm-bracket {
+  color: var(--compline-fg);
+}
+
+.CodeMirror.cm-s-default .cm-tag,
+.CodeMirror.cm-s-paper .cm-tag {
+  color: var(--compline-red);
+}
+
+.CodeMirror.cm-s-default .cm-attribute,
+.CodeMirror.cm-s-paper .cm-attribute {
+  color: var(--compline-teal);
+}
+
+.CodeMirror.cm-s-default .cm-hr,
+.CodeMirror.cm-s-paper .cm-hr {
+  color: var(--compline-base6);
+}
+
+.CodeMirror.cm-s-default .cm-url,
+.CodeMirror.cm-s-paper .cm-url {
+  color: var(--compline-cyan);
+}
+
+.CodeMirror.cm-s-default .cm-link,
+.CodeMirror.cm-s-paper .cm-link {
+  color: var(--compline-blue);
+}
+
+.CodeMirror.cm-s-default .cm-error,
+.CodeMirror.cm-s-paper .cm-error {
+  color: var(--compline-red);
+}

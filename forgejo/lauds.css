@@ -1,0 +1,757 @@
+.markup [src$="#gh-dark-mode-only"],
+.markup [src$="#dark-mode-only"],
+.markup [href$="#gh-dark-mode-only"],
+.markup [href$="#dark-mode-only"] {
+  display: none;
+}
+
+.markup [src$="#gh-light-mode-only"],
+.markup [src$="#light-mode-only"],
+.markup [href$="#gh-light-mode-only"],
+.markup [href$="#light-mode-only"] {
+  display: unset;
+}
+
+:root {
+  /* Lauds palette — https://github.com/joshuablais/compline */
+  --lauds-bg: #f0efeb;
+  --lauds-bg-alt: #e0dcd4;
+  --lauds-base0: #f5f4f2;
+  --lauds-base1: #efeeed;
+  --lauds-base2: #e5e3e0;
+  --lauds-base3: #d8d6d3;
+  --lauds-base4: #b8b5b0;
+  --lauds-base5: #9a9791;
+  --lauds-base6: #7d7a75;
+  --lauds-base7: #5f5c58;
+  --lauds-base8: #2d2a27;
+  --lauds-fg: #1a1d21;
+  --lauds-fg-alt: #4a4d51;
+  --lauds-red: #8b6666;
+  --lauds-orange: #7a6d5a;
+  --lauds-green: #5a6b5a;
+  --lauds-blue: #5a6b7a;
+  --lauds-cyan: #64757d;
+  --lauds-yellow: #8b7e52;
+  --lauds-teal: #4d6b6b;
+  --lauds-dark-cyan: #546470;
+
+  /* paper ramp — low number = light, high number = dark.
+     body is bg, cards are base0 (lighter), headers are base2 (darker) */
+  --paper-50: #f5f4f2;
+  --paper-100: #f0efeb;
+  --paper-150: #e5e3e0;
+  --paper-200: #e0dcd4;
+  --paper-250: #d8d6d3;
+  --paper-300: #c8c5c1;
+  --paper-350: #b8b5b0;
+  --paper-400: #a8a5a0;
+  --paper-500: #9a9791;
+  --paper-600: #7d7a75;
+  --paper-700: #5f5c58;
+  --paper-800: #4a4d51;
+  --paper-850: #2d2a27;
+  --paper-900: #1a1d21;
+  --is-dark-theme: false;
+
+  /* primary — Lauds blue (dark-N = darker, light-N = lighter) */
+  --color-primary: var(--lauds-blue);
+  --color-primary-contrast: #f0efeb;
+  --color-primary-dark-1: #51606e;
+  --color-primary-dark-2: #4d5b68;
+  --color-primary-dark-3: #485662;
+  --color-primary-dark-4: #44505c;
+  --color-primary-dark-5: #3f4b55;
+  --color-primary-dark-6: #3a464f;
+  --color-primary-dark-7: #364049;
+  --color-primary-light-1: #697886;
+  --color-primary-light-2: #788692;
+  --color-primary-light-3: #87939e;
+  --color-primary-light-4: #96a0a9;
+  --color-primary-light-5: #a5aeb5;
+  --color-primary-light-6: #b4bbc1;
+  --color-primary-light-7: #c3c8cd;
+  --color-primary-alpha-10: #5a6b7a19;
+  --color-primary-alpha-20: #5a6b7a33;
+  --color-primary-alpha-30: #5a6b7a4b;
+  --color-primary-alpha-40: #5a6b7a66;
+  --color-primary-alpha-50: #5a6b7a80;
+  --color-primary-alpha-60: #5a6b7a99;
+  --color-primary-alpha-70: #5a6b7ab3;
+  --color-primary-alpha-80: #5a6b7acc;
+  --color-primary-alpha-90: #5a6b7ae1;
+  --color-primary-hover: var(--color-primary-dark-1);
+  --color-primary-active: var(--color-primary-dark-2);
+
+  /* secondary — surface chrome and borders */
+  --color-secondary: var(--paper-250);
+  --color-secondary-dark-1: #c8c5c1;
+  --color-secondary-dark-2: #b8b5b0;
+  --color-secondary-dark-3: #a8a5a0;
+  --color-secondary-dark-4: #9a9791;
+  --color-secondary-dark-5: #8b8883;
+  --color-secondary-dark-6: #7d7a75;
+  --color-secondary-dark-7: #6e6b67;
+  --color-secondary-dark-8: #5f5c58;
+  --color-secondary-dark-9: #4a4d51;
+  --color-secondary-dark-10: #3a3a3b;
+  --color-secondary-dark-11: #2d2a27;
+  --color-secondary-dark-12: #2d2a27;
+  --color-secondary-dark-13: #1a1d21;
+  --color-secondary-light-1: #e0dcd4;
+  --color-secondary-light-2: #e5e3e0;
+  --color-secondary-light-3: #efeeed;
+  --color-secondary-light-4: #f5f4f2;
+  --color-secondary-alpha-10: #d8d6d319;
+  --color-secondary-alpha-20: #d8d6d333;
+  --color-secondary-alpha-30: #d8d6d34b;
+  --color-secondary-alpha-40: #d8d6d366;
+  --color-secondary-alpha-50: #d8d6d380;
+  --color-secondary-alpha-60: #d8d6d399;
+  --color-secondary-alpha-70: #d8d6d3b3;
+  --color-secondary-alpha-80: #d8d6d3cc;
+  --color-secondary-alpha-90: #d8d6d3e1;
+  --color-secondary-hover: var(--color-secondary-dark-1);
+  --color-secondary-active: var(--color-secondary-dark-2);
+
+  /* console — stays dark for terminal output.
+     Colors come from the Compline (dark) palette. */
+  --color-console-fg: #f0efeb;
+  --color-console-fg-subtle: #8b919a;
+  --color-console-bg: #1a1d21;
+  --color-console-border: #3d424a;
+  --color-console-hover-bg: #ffffff16;
+  --color-console-active-bg: #3d424a;
+  --color-console-menu-bg: #282c34;
+  --color-console-menu-border: #515761;
+
+  /* named colors — mapped to Lauds palette */
+  --color-red: var(--lauds-red);
+  --color-orange: var(--lauds-orange);
+  --color-yellow: var(--lauds-yellow);
+  --color-olive: #6b7a55;
+  --color-green: var(--lauds-green);
+  --color-teal: var(--lauds-teal);
+  --color-blue: var(--lauds-blue);
+  --color-violet: var(--lauds-dark-cyan);
+  --color-purple: var(--lauds-dark-cyan);
+  --color-pink: #7d666f;
+  --color-brown: #6f5f50;
+  --color-grey: var(--paper-500);
+  --color-black: var(--lauds-fg);
+
+  /* light variants (lighter) */
+  --color-red-light: #a98f8f;
+  --color-orange-light: #9d9487;
+  --color-yellow-light: #a9a081;
+  --color-olive-light: #939d83;
+  --color-green-light: #879387;
+  --color-teal-light: #7e9393;
+  --color-blue-light: #87939e;
+  --color-violet-light: #838e96;
+  --color-purple-light: #838e96;
+  --color-pink-light: #a08f96;
+  --color-brown-light: #968b80;
+  --color-grey-light: var(--paper-400);
+  --color-black-light: #2d2a27;
+
+  /* dark-1 variants (about 10% darker) */
+  --color-red-dark-1: #7d5c5c;
+  --color-orange-dark-1: #6e6251;
+  --color-yellow-dark-1: #7d714a;
+  --color-olive-dark-1: #606e4d;
+  --color-green-dark-1: #516051;
+  --color-teal-dark-1: #456060;
+  --color-blue-dark-1: #51606e;
+  --color-violet-dark-1: #4c5a65;
+  --color-purple-dark-1: #4c5a65;
+  --color-pink-dark-1: #705c64;
+  --color-brown-dark-1: #645648;
+  --color-black-dark-1: #0f1114;
+
+  /* dark-2 variants (about 20% darker) */
+  --color-red-dark-2: #6f5252;
+  --color-orange-dark-2: #625748;
+  --color-yellow-dark-2: #6f6542;
+  --color-olive-dark-2: #566244;
+  --color-green-dark-2: #485648;
+  --color-teal-dark-2: #3e5656;
+  --color-blue-dark-2: #485662;
+  --color-violet-dark-2: #43505a;
+  --color-purple-dark-2: #43505a;
+  --color-pink-dark-2: #645259;
+  --color-brown-dark-2: #594c40;
+  --color-black-dark-2: #0a0b0d;
+
+  /* ANSI colors — for the dark console, so they use the Compline palette */
+  --color-ansi-black: #22262b;
+  --color-ansi-red: #cdacac;
+  --color-ansi-green: #b8c4b8;
+  --color-ansi-yellow: #d4ccb4;
+  --color-ansi-blue: #b4bcc4;
+  --color-ansi-magenta: #c0b4b8;
+  --color-ansi-cyan: #b4c0c8;
+  --color-ansi-white: #8b919a;
+  --color-ansi-bright-black: #676d77;
+  --color-ansi-bright-red: #dcc5c5;
+  --color-ansi-bright-green: #cdd6cd;
+  --color-ansi-bright-yellow: #e0d9ca;
+  --color-ansi-bright-blue: #cbd2d8;
+  --color-ansi-bright-magenta: #d0c6c9;
+  --color-ansi-bright-cyan: #c9d3d9;
+  --color-ansi-bright-white: #f0efeb;
+
+  /* other colors */
+  --color-gold: var(--lauds-yellow);
+  --color-white: #ffffff;
+  --color-pure-black: #000000;
+
+  /* diff */
+  --color-diff-removed-word-bg: #e8cfcf;
+  --color-diff-added-word-bg: #cfdccf;
+  --color-diff-removed-row-bg: #f2e3e3;
+  --color-diff-moved-row-bg: #ede6d3;
+  --color-diff-added-row-bg: #e5ede5;
+  --color-diff-removed-row-border: #e0c4c4;
+  --color-diff-moved-row-border: #d8cfb0;
+  --color-diff-added-row-border: #bfd0bf;
+  --color-diff-inactive: var(--paper-250);
+
+  /* alerts */
+  --color-error-border: #d9b9b9;
+  --color-error-bg: #f2e3e3;
+  --color-error-bg-active: #e8cfcf;
+  --color-error-bg-hover: #e8cfcf;
+  --color-error-text: var(--color-red-dark-1);
+  --color-success-border: #bfd0bf;
+  --color-success-bg: #e5ede5;
+  --color-success-text: var(--color-green-dark-1);
+  --color-warning-border: #d8cfb0;
+  --color-warning-bg: #ede6d3;
+  --color-warning-text: var(--color-yellow-dark-1);
+  --color-info-border: #bcc7d1;
+  --color-info-bg: #e3e8ec;
+  --color-info-text: var(--color-blue-dark-1);
+
+  /* badges */
+  --color-red-badge: var(--lauds-red);
+  --color-red-badge-bg: #8b666622;
+  --color-red-badge-hover-bg: #8b666644;
+  --color-green-badge: var(--lauds-green);
+  --color-green-badge-bg: #5a6b5a22;
+  --color-green-badge-hover-bg: #5a6b5a44;
+  --color-yellow-badge: var(--lauds-yellow);
+  --color-yellow-badge-bg: #8b7e5222;
+  --color-yellow-badge-hover-bg: #8b7e5244;
+  --color-orange-badge: var(--lauds-orange);
+  --color-orange-badge-bg: #7a6d5a22;
+  --color-orange-badge-hover-bg: #7a6d5a44;
+
+  /* thin element colors (oklch — parametric, theme-independent)
+     chroma is low so the colors stay muted like the rest of Lauds */
+  --thin-lightness: 0.5;
+  --regular-chroma: 0.06;
+  --color-thin-green: oklch(var(--thin-lightness) var(--regular-chroma) 145deg);
+  --color-thin-red: oklch(var(--thin-lightness) var(--regular-chroma) 27deg);
+  --color-thin-purple: oklch(
+    var(--thin-lightness) var(--regular-chroma) 250deg
+  );
+  --color-thin-orange: oklch(var(--thin-lightness) var(--regular-chroma) 85deg);
+
+  --thin-lightness-highlight: 0.4;
+  --color-thin-red-highlight: oklch(
+    var(--thin-lightness-highlight) var(--regular-chroma) 27deg
+  );
+
+  /* danger button bg (oklch) */
+  --bg-lightness: 0.92;
+  --bg-chroma: 0.03;
+  --color-danger-bg: oklch(var(--bg-lightness) var(--bg-chroma) 27deg);
+
+  /* target-based / semantic colors */
+  --color-body: var(--paper-100);
+  --color-box-header: var(--paper-150);
+  --color-box-body: var(--paper-50);
+  --color-box-body-highlight: var(--paper-150);
+  --color-text-dark: var(--lauds-fg);
+  --color-text: var(--lauds-fg);
+  --color-text-light: var(--lauds-base8);
+  --color-text-light-1: var(--lauds-fg-alt);
+  --color-text-light-2: var(--lauds-base7);
+  --color-text-light-3: #6a6763;
+  --color-footer: var(--paper-150);
+  --color-timeline: var(--paper-250);
+  --color-input-text: var(--lauds-fg);
+  --color-input-background: var(--paper-50);
+  --color-input-toggle-background: var(--paper-250);
+  --color-input-border: var(--paper-350);
+  --color-input-border-hover: var(--paper-500);
+  --color-header-wrapper: var(--paper-150);
+  --color-header-wrapper-transparent: #e5e3e000;
+  --color-light: #1a1d2108;
+  --color-light-mimic-enabled: rgba(
+    0,
+    0,
+    0,
+    calc(8 / 255 * 222 / 255 / var(--opacity-disabled))
+  );
+  --color-light-border: #1a1d211d;
+  --color-hover: var(--paper-200);
+  --color-active: var(--paper-250);
+  --color-menu: var(--paper-50);
+  --color-card: var(--paper-50);
+  --fancy-card-bg: var(--paper-50);
+  --fancy-card-border: var(--paper-250);
+  --color-markup-table-row: #1a1d2006;
+  --color-markup-code-block: var(--paper-150);
+  --color-markup-code-inline: var(--paper-250);
+  --color-button: var(--paper-200);
+  --color-code-bg: var(--paper-50);
+  --color-shadow: #1a1d2020;
+  --color-secondary-bg: var(--paper-150);
+  --color-text-focus: var(--lauds-fg);
+  --color-expand-button: var(--paper-250);
+  --color-placeholder-text: var(--color-text-light-3);
+  --color-editor-line-highlight: var(--paper-150);
+  --color-project-board-bg: var(--color-secondary-light-3);
+  --color-project-board-dark-label: var(--color-text-light-3);
+  --color-caret: var(--color-text);
+  --color-reaction-bg: #1a1d2012;
+  --color-reaction-active-bg: var(--color-primary-alpha-30);
+  --color-reaction-hover-bg: var(--color-primary-alpha-40);
+  --color-tooltip-text: #f0efeb;
+  --color-tooltip-bg: #1a1d21f0;
+  --color-nav-bg: var(--paper-150);
+  --color-nav-hover-bg: var(--paper-250);
+  --color-secondary-nav-bg: var(--color-body);
+  --color-label-text: var(--lauds-fg);
+  --color-label-bg: var(--paper-250);
+  --color-label-hover-bg: var(--paper-300);
+  --color-label-active-bg: var(--paper-350);
+  --color-label-bg-alt: var(--paper-300);
+  --color-accent: var(--color-primary);
+  --color-small-accent: var(--color-primary-light-5);
+  --color-highlight-fg: var(--color-primary);
+  --color-highlight-bg: var(--color-primary-alpha-20);
+  --color-overlay-backdrop: #1a1d2099;
+  --color-selection-bg: #c3c8cd;
+  --color-selection-fg: #1a1d21;
+
+  /* image diff checkerboard */
+  --checkerboard-color-1: #e5e3e0;
+  --checkerboard-color-2: #d8d6d3;
+
+  /* status indicators */
+  --color-indicator-offline: #9a9791;
+  --color-indicator-offline-20: #9a97911a;
+  --color-indicator-idle: var(--lauds-green);
+  --color-indicator-idle-20: #5a6b5a1a;
+  --color-indicator-active: var(--lauds-blue);
+  --color-indicator-active-20: #5a6b7a33;
+
+  accent-color: var(--color-accent);
+  color-scheme: light;
+}
+
+i.grey.icon.icon.icon.icon {
+  color: var(--paper-500) !important;
+}
+.ui.secondary.vertical.menu {
+  border-radius: 0.28571429rem !important;
+  overflow: hidden;
+}
+.ui.basic.primary.button.item {
+  background-color: var(--color-active) !important;
+  color: var(--color-text) !important;
+  box-shadow: none !important;
+}
+.ui.red.label.notification_count,
+.ui.primary.label,
+.ui.primary.labels .label {
+  background-color: var(--color-primary) !important;
+  color: #f0efeb !important;
+}
+.ui.labeled.icon.buttons > .button > .icon,
+.ui.labeled.icon.button > .icon {
+  background-color: var(--color-light) !important;
+}
+#review-box .review-comments-counter {
+  background-color: var(--color-primary) !important;
+  color: #f0efeb !important;
+  margin-left: 0.5em;
+}
+.ui.basic.labels .primary.label,
+.ui.ui.ui.basic.primary.label {
+  color: var(--color-primary) !important;
+}
+.ui.yellow.label.pending-label {
+  color: var(--color-warning-text) !important;
+}
+strong.attention-important,
+svg.attention-important {
+  color: var(--color-violet);
+}
+strong.attention-note,
+svg.attention-note {
+  color: var(--color-blue);
+}
+strong.attention-caution,
+svg.attention-caution {
+  color: var(--color-red);
+}
+.ui.basic.red.button {
+  background-color: var(--color-red);
+  color: #f0efeb;
+}
+.ui.basic.red.button:hover,
+.ui.basic.red.button:focus {
+  background-color: var(--color-red-dark-1);
+  color: #f0efeb;
+}
+.ui.basic.red.button:active {
+  background-color: var(--color-red-dark-2);
+  color: #f0efeb;
+}
+
+/* Chroma syntax highlighting — Lauds palette
+   https://github.com/alecthomas/chroma/blob/6428fb4e65f3c1493491571c8a6a8f1add1da822/types.go#L208
+   keywords red, types blue, builtins cyan, functions green,
+   strings yellow (darker shade for contrast), numbers/constants orange,
+   operators dark-cyan */
+.chroma .bp {
+  color: var(--lauds-dark-cyan);
+  font-style: italic;
+} /* NameBuiltinPseudo — self/this/super */
+.chroma .c {
+  color: var(--lauds-base7);
+  font-style: italic;
+} /* Comment */
+.chroma .c1 {
+  color: var(--lauds-base7);
+  font-style: italic;
+} /* CommentSingle */
+.chroma .ch {
+  color: var(--lauds-base7);
+  font-style: italic;
+} /* CommentHashbang */
+.chroma .cm {
+  color: var(--lauds-base7);
+  font-style: italic;
+} /* CommentMultiline */
+.chroma .cp {
+  color: var(--lauds-teal);
+} /* CommentPreproc — preprocessor directives */
+.chroma .cpf {
+  color: var(--color-yellow-dark-1);
+} /* CommentPreprocFile — string/path */
+.chroma .cs {
+  color: var(--lauds-base7);
+  font-style: italic;
+} /* CommentSpecial */
+.chroma .dl {
+  color: var(--color-yellow-dark-1);
+} /* LiteralStringDelimiter */
+.chroma .fm {
+} /* NameFunctionMagic */
+.chroma .g {
+} /* Generic */
+.chroma .gd {
+  color: var(--lauds-red);
+  background-color: #f2e3e3;
+} /* GenericDeleted */
+.chroma .ge {
+  color: var(--lauds-fg);
+  font-style: italic;
+} /* GenericEmph */
+.chroma .gh {
+  color: var(--lauds-blue);
+} /* GenericHeading */
+.chroma .gi {
+  color: var(--lauds-green);
+  background-color: #e5ede5;
+} /* GenericInserted */
+.chroma .gl {
+} /* GenericUnderline */
+.chroma .go {
+  color: var(--lauds-base7);
+} /* GenericOutput */
+.chroma .gp {
+  color: var(--lauds-fg);
+} /* GenericPrompt */
+.chroma .gr {
+  color: var(--lauds-red);
+} /* GenericError */
+.chroma .gs {
+  color: var(--lauds-fg);
+  font-weight: bold;
+} /* GenericStrong */
+.chroma .gt {
+  color: var(--lauds-red);
+} /* GenericTraceback */
+.chroma .gu {
+  color: var(--lauds-base7);
+} /* GenericSubheading */
+.chroma .il {
+  color: var(--lauds-orange);
+} /* LiteralNumberIntegerLong */
+.chroma .k {
+  color: var(--lauds-red);
+} /* Keyword */
+.chroma .kc {
+  color: var(--lauds-orange);
+} /* KeywordConstant — true/false/null */
+.chroma .kd {
+  color: var(--lauds-red);
+} /* KeywordDeclaration — let/var/const */
+.chroma .kn {
+  color: var(--lauds-red);
+} /* KeywordNamespace */
+.chroma .kp {
+  color: var(--lauds-red);
+} /* KeywordPseudo */
+.chroma .kr {
+  color: var(--lauds-red);
+} /* KeywordReserved */
+.chroma .kt {
+  color: var(--lauds-blue);
+} /* KeywordType */
+.chroma .l {
+} /* Literal */
+.chroma .ld {
+} /* LiteralDate */
+.chroma .m {
+  color: var(--lauds-orange);
+} /* LiteralNumber */
+.chroma .mb {
+  color: var(--lauds-orange);
+} /* LiteralNumberBin */
+.chroma .mf {
+  color: var(--lauds-orange);
+} /* LiteralNumberFloat */
+.chroma .mh {
+  color: var(--lauds-orange);
+} /* LiteralNumberHex */
+.chroma .mi {
+  color: var(--lauds-orange);
+} /* LiteralNumberInteger */
+.chroma .mo {
+  color: var(--lauds-orange);
+} /* LiteralNumberOct */
+.chroma .n {
+  color: var(--lauds-fg);
+} /* Name */
+.chroma .na {
+  color: var(--lauds-teal);
+} /* NameAttribute */
+.chroma .nb {
+  color: var(--lauds-cyan);
+} /* NameBuiltin */
+.chroma .nc {
+  color: var(--lauds-blue);
+} /* NameClass */
+.chroma .nd {
+  color: var(--lauds-teal);
+} /* NameDecorator */
+.chroma .ne {
+  color: var(--lauds-blue);
+} /* NameException */
+.chroma .nf {
+  color: var(--lauds-green);
+} /* NameFunction */
+.chroma .ni {
+  color: var(--lauds-fg);
+} /* NameEntity */
+.chroma .nl {
+  color: var(--lauds-red);
+} /* NameLabel */
+.chroma .nn {
+  color: var(--lauds-fg);
+} /* NameNamespace */
+.chroma .no {
+  color: var(--lauds-orange);
+} /* NameConstant */
+.chroma .nt {
+  color: var(--lauds-red);
+} /* NameTag */
+.chroma .nv {
+  color: var(--lauds-fg);
+} /* NameVariable */
+.chroma .nx {
+  color: var(--lauds-fg);
+} /* NameOther */
+.chroma .o {
+  color: var(--lauds-dark-cyan);
+} /* Operator */
+.chroma .ow {
+  color: var(--lauds-dark-cyan);
+} /* OperatorWord */
+.chroma .p {
+  color: var(--lauds-fg);
+} /* Punctuation */
+.chroma .py {
+} /* NameProperty */
+.chroma .s {
+  color: var(--color-yellow-dark-1);
+} /* LiteralString */
+.chroma .s1 {
+  color: var(--color-yellow-dark-1);
+} /* LiteralStringSingle */
+.chroma .s2 {
+  color: var(--color-yellow-dark-1);
+} /* LiteralStringDouble */
+.chroma .sa {
+  color: var(--lauds-red);
+} /* LiteralStringAffix */
+.chroma .sb {
+  color: var(--color-yellow-dark-1);
+} /* LiteralStringBacktick */
+.chroma .sc {
+  color: var(--color-yellow-dark-1);
+} /* LiteralStringChar */
+.chroma .sd {
+  color: var(--color-yellow-dark-1);
+} /* LiteralStringDoc */
+.chroma .se {
+  color: var(--lauds-orange);
+} /* LiteralStringEscape */
+.chroma .sh {
+  color: var(--color-yellow-dark-1);
+} /* LiteralStringHeredoc */
+.chroma .si {
+  color: var(--color-yellow-dark-1);
+} /* LiteralStringInterpol */
+.chroma .sr {
+  color: var(--lauds-cyan);
+} /* LiteralStringRegex */
+.chroma .ss {
+  color: var(--lauds-orange);
+} /* LiteralStringSymbol */
+.chroma .sx {
+  color: var(--color-yellow-dark-1);
+} /* LiteralStringOther */
+.chroma .vc {
+  color: var(--lauds-fg);
+} /* NameVariableClass */
+.chroma .vg {
+  color: var(--lauds-fg);
+} /* NameVariableGlobal */
+.chroma .vi {
+  color: var(--lauds-fg);
+} /* NameVariableInstance */
+.chroma .vm {
+} /* NameVariableMagic */
+.chroma .w {
+  color: var(--lauds-base4);
+} /* TextWhitespace */
+.chroma .err {
+  /* not styled — Chroma flags too many things like JSX */
+} /* Error */
+
+/* CodeMirror — markdown editor, Lauds palette */
+.CodeMirror.cm-s-default .cm-property,
+.CodeMirror.cm-s-paper .cm-property {
+  color: var(--lauds-teal);
+}
+
+.CodeMirror.cm-s-default .cm-header,
+.CodeMirror.cm-s-paper .cm-header {
+  color: var(--lauds-blue);
+}
+
+.CodeMirror.cm-s-default .cm-quote,
+.CodeMirror.cm-s-paper .cm-quote {
+  color: var(--color-yellow-dark-1);
+}
+
+.CodeMirror.cm-s-default .cm-keyword,
+.CodeMirror.cm-s-paper .cm-keyword {
+  color: var(--lauds-red);
+}
+
+.CodeMirror.cm-s-default .cm-atom,
+.CodeMirror.cm-s-paper .cm-atom {
+  color: var(--lauds-orange);
+}
+
+.CodeMirror.cm-s-default .cm-number,
+.CodeMirror.cm-s-paper .cm-number {
+  color: var(--lauds-orange);
+}
+
+.CodeMirror.cm-s-default .cm-def,
+.CodeMirror.cm-s-paper .cm-def {
+  color: var(--lauds-fg);
+}
+
+.CodeMirror.cm-s-default .cm-variable-2,
+.CodeMirror.cm-s-paper .cm-variable-2 {
+  color: var(--lauds-cyan);
+}
+
+.CodeMirror.cm-s-default .cm-variable-3,
+.CodeMirror.cm-s-paper .cm-variable-3 {
+  color: var(--lauds-green);
+}
+
+.CodeMirror.cm-s-default .cm-comment,
+.CodeMirror.cm-s-paper .cm-comment {
+  color: var(--lauds-base7);
+  font-style: italic;
+}
+
+.CodeMirror.cm-s-default .cm-string,
+.CodeMirror.cm-s-paper .cm-string {
+  color: var(--color-yellow-dark-1);
+}
+
+.CodeMirror.cm-s-default .cm-string-2,
+.CodeMirror.cm-s-paper .cm-string-2 {
+  color: var(--lauds-orange);
+}
+
+.CodeMirror.cm-s-default .cm-meta,
+.CodeMirror.cm-s-paper .cm-meta,
+.CodeMirror.cm-s-default .cm-qualifier,
+.CodeMirror.cm-s-paper .cm-qualifier {
+  color: var(--lauds-red);
+}
+
+.CodeMirror.cm-s-default .cm-builtin,
+.CodeMirror.cm-s-paper .cm-builtin {
+  color: var(--lauds-cyan);
+}
+
+.CodeMirror.cm-s-default .cm-bracket,
+.CodeMirror.cm-s-paper .cm-bracket {
+  color: var(--lauds-fg);
+}
+
+.CodeMirror.cm-s-default .cm-tag,
+.CodeMirror.cm-s-paper .cm-tag {
+  color: var(--lauds-red);
+}
+
+.CodeMirror.cm-s-default .cm-attribute,
+.CodeMirror.cm-s-paper .cm-attribute {
+  color: var(--lauds-teal);
+}
+
+.CodeMirror.cm-s-default .cm-hr,
+.CodeMirror.cm-s-paper .cm-hr {
+  color: var(--lauds-base6);
+}
+
+.CodeMirror.cm-s-default .cm-url,
+.CodeMirror.cm-s-paper .cm-url {
+  color: var(--lauds-cyan);
+}
+
+.CodeMirror.cm-s-default .cm-link,
+.CodeMirror.cm-s-paper .cm-link {
+  color: var(--lauds-blue);
+}
+
+.CodeMirror.cm-s-default .cm-error,
+.CodeMirror.cm-s-paper .cm-error {
+  color: var(--lauds-red);
+}
